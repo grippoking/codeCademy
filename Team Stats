@@ -1,0 +1,99 @@
+const teamSoloMid = {
+  _players: [
+  {
+    handle: 'Bjergsen',
+    position: 'Mid',
+    age: 24,
+  }, {
+    handle: 'Broken Blade',
+    position: 'Top',
+    age: 20,
+  }, {
+    handle: 'Doublelift',
+    position: 'Carry',
+    age: 26,
+  }, {
+    handle: 'Biofrost',
+    position: 'Support',
+    age: 23,
+  }, {
+    handle: 'Spica',
+    position: 'Jungle',
+    age: 20,
+  }
+],
+get players() {
+  return this._players;
+},
+  _games: [
+    {
+      opponent: 'CLG',
+      result: 'TSM VICTORY',
+      teamKills: 19,
+      teamTurrets: 10,
+      teamDragons: 5,
+      teamBaron: 3,
+      opponentKills: 16,
+      opponentTurrets: 3,
+      opponentDragons: 3,
+      opponentBaron: 0,
+    }, {
+      opponent: 'Cloud9',
+      result: 'TSM DEFEAT',
+      teamKills: 4,
+      teamTurrets: 3,
+      teamDragons: 2,
+      teamBaron: 0,
+      opponentKills: 13,
+      opponentTurrets: 8,
+      opponentDragons: 1,
+      opponentBaron: 1,
+    }, {
+      opponent: 'Immortals',
+      result: 'TSM DEFEAT',
+      teamKills: 8,
+      teamTurrets: 2,
+      teamDragons: 1,
+      teamBaron: 0,
+      opponentKills: 13,
+      opponentTurrets: 11,
+      opponentDragons: 5,
+      opponentBaron: 2,
+    }
+  ],
+  get games() {
+    return this._games;
+  },
+  addPlayer(handle, position, age) {
+    let player = {
+      handle: handle,
+      position: position,
+      age: age
+    };
+    this.players.push(player);
+  },
+  addGame(opponent, result, teamKills, teamTurrets, teamDragons, teamBaron, opponentKills, opponentTurrets, opponentDragons, opponentBaron) {
+    let game = {
+      opponent: opponent,
+      result: result,
+      teamKills: teamKills,
+      teamTurrets: teamTurrets,
+      teamDragons: teamDragons,
+      teamBaron: teamBaron,
+      opponentKills: opponentKills,
+      opponentTurrets: opponentTurrets,
+      opponentDragons: opponentDragons,
+      opponentBaron: opponentBaron
+    };
+    this.games.push(game);
+  }
+};
+// tests addPlayer method
+//teamSoloMid.addPlayer('Jensen', 'Mid', 23);
+//teamSoloMid.addPlayer('Aphromoo', 'Support', 26);
+//teamSoloMid.addPlayer('Babler', 'Jungle', 20);
+
+//tests addGame method
+//teamSoloMid.addGame('Golden Guardians', 'TSM VICTORY', 11, 11, 3, 1, 5, 2, 3, 0);
+//console.log(teamSoloMid.players);
+//console.log(teamSoloMid.games);
